@@ -6,10 +6,9 @@ from tweets.models import Tweet
 
 class TweetSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
-    is_retweet = serializers.ReadOnlyField(source='is_retweet')
     class Meta:
         model = Tweet
-        fields = ['id', 'body','author','is_retweet']
+        fields = ['id', 'body','author']
 
 
 class UserSerializer(serializers.ModelSerializer):
